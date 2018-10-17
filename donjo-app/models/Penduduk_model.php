@@ -14,20 +14,9 @@
 
 	public function autocomplete()
 	{
-		$sql = "SELECT nama FROM tweb_penduduk";
-		$query = $this->db->query($sql);
-		$data = $query->result_array();
-
-		$outp = '';
-		for ($i=0; $i<count($data); $i++)
-		{
-			$outp .= ',"'.$data[$i]['nama'].'"';
-		}
-		$outp = substr($outp, 1);
-		$outp = '[' .$outp. ']';
-		return $outp;
+		$str = autocomplete_str('nama', 'tweb_penduduk');
+		return $str;
 	}
-
 
 	protected function search_sql()
 	{
