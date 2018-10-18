@@ -66,7 +66,7 @@
 	{
 		unset($_SESSION['success']);
 		$id_cb = $_POST['id_cb'];
-		foreach($id_cb as $id)
+		foreach ($id_cb as $id)
 		{
 			$this->kembalikan_status($id);
 		}
@@ -194,7 +194,7 @@
 		return $sql;
 	}
 
-	function list_data($o=0, $offset=0, $limit=500)
+	public function list_data($o=0, $offset=0, $limit=500)
 	{
 		$select_sql = "SELECT u.id,u.nik,u.tanggallahir,sd.nama as status_dasar,u.id_kk,u.nama,a.dusun,a.rw,a.rt,d.alamat,log.id as id_log,log.no_kk AS no_kk,log.catatan as catatan,log.nama_kk as nama_kk,
 			(SELECT DATE_FORMAT(FROM_DAYS(TO_DAYS(log.tgl_peristiwa)-TO_DAYS(u.tanggallahir)), '%Y')+0) AS umur_pada_peristiwa,
