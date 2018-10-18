@@ -1,5 +1,4 @@
 <script type="text/javascript">
-	var baseURL = "<?= base_url(); ?>";
 	$(function()
 	{
 		var keyword = <?= $keyword?> ;
